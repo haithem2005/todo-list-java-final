@@ -1,4 +1,8 @@
-public class task {
+
+import java.io.Serializable;
+
+
+public class Task {
 
     private String title;
     private String DueDate;
@@ -6,7 +10,9 @@ public class task {
     private boolean statusDone;
     private String description;
 
-    public task(String title, String dueDate, String project) {
+
+
+    public Task(String title, String dueDate, String project) {
         this.title = title;
         DueDate = dueDate;
         this.project = project;
@@ -55,10 +61,13 @@ public class task {
 
     @Override
     public String toString() {
-        return "title is " + title + " and DueDate is " + DueDate + " Project is " + project + " done " + statusDone + "\n" + " Description is " + description;
+        return  title + " ," + DueDate + " , " + project + " ," + statusDone  + " ," + description;
 
     }
 
+    public boolean equals(Task t){
+        return t.title.equals(title);
+    }
 
 
 }

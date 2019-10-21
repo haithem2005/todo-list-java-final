@@ -1,25 +1,29 @@
 import java.util.ArrayList;
-import java.io.File;
-import java.io.IOException;
 
 public class TaskList  {
-    ArrayList<task>taskArrayList=new ArrayList<>();
+    //ArrayList<task>taskArrayList=new ArrayList<>();
+    ArrayList<Task> taskArrayList;
 
 
-    public ArrayList<task> getTaskArrayList() {
+    // constructor called on initialization e.g. new TaskList();
+    public TaskList() {
+        this.taskArrayList = new ArrayList<>();
+    }
+
+    public ArrayList<Task> getTaskArrayList() {
         return taskArrayList;
     }
 
-    public void setTaskArrayList(ArrayList<task> taskArrayList) {
+    public void setTaskArrayList(ArrayList<Task> taskArrayList) {
         this.taskArrayList = taskArrayList;
     }
 
-    public void addTask(task task){
+    public void addTask(Task task){
         taskArrayList.add(task);
     }
 
     public void print(){
-        for(task i:taskArrayList){
+        for(Task i:taskArrayList){
             System.out.println(i);
 
         }
@@ -27,13 +31,13 @@ public class TaskList  {
         }
 
     public void removeTask(String title) {
-        task c = this.findTask(title);
+        Task c = this.findTask(title);
         if (c != null) {
             this.taskArrayList.remove(c);
         }
     }
-    public task findTask(String title) {
-        for (task c :this.taskArrayList) {
+    public Task findTask(String title) {
+        for (Task c :taskArrayList) {
             if (c.getTitle().equals(title)) {
                 return c;
             }
@@ -43,12 +47,33 @@ public class TaskList  {
 
     }
 
+    public void markAsDone(String title){
+        Task tmp=this.findTask(title);
+        tmp.setStatusDone(true);
+        System.out.println(tmp.isStatusDone());
+
+
+
+    }
+
+    public void  updateTaskDescription(String newDescription, String title){
+        Task tmp=this.findTask(title);
+        tmp.setDescription(newDescription);
+
+    }
+
+    public void updateTaskDate(String newDate, String title){
+        Task tmp= this.findTask(title);
+        tmp.setDueDate(newDate);
+    }
+
+
 
 
 
     public int noOfToDo(){
         int toDo = 0;
-        for(task i : taskArrayList){
+        for(Task i : this.taskArrayList){
 
             if (i.isStatusDone() == false){
 
@@ -57,13 +82,14 @@ public class TaskList  {
 
 
         }
+
         return toDo;
     }
 
 
     public int noOfDone(){
         int done= 0;
-        for(task i : taskArrayList){
+        for(Task i : taskArrayList){
 
             if (i.isStatusDone() == true){
 
