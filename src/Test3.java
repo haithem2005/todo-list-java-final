@@ -37,14 +37,14 @@ public class Test3 {
                 case 2:
 
                     System.out.println("please enter task title");
-                    String taskTitle = scan.nextLine();
-                    scan.next();
+                    String taskTitle = scan.next();;
+
                     System.out.println("please enter task due date");
-                    String due = scan.nextLine();
-                    scan.next();
+                    String due = scan.next();;
+
                     System.out.println("please assign project to the task");
-                    String taskProject = scan.nextLine();
-                    scan.next();
+                    String taskProject = scan.next();;
+
                     //task task=new task(taskTitle,due,taskProject);
                 /*task.setDueDate(due);
                 task.setProject(taskProject);
@@ -54,8 +54,8 @@ public class Test3 {
                     //taskArrayList.addTask(new task(taskTitle,due,taskProject));
                     //task task = new task(taskTitle, due, taskProject);
                     System.out.println("set task description");
-                    String taskDescription = scan.nextLine();
-                    scan.next();
+                    String taskDescription = scan.next();;
+
                     taskArrayList.findTask(taskTitle).setDescription(taskDescription);
                     break;
 
