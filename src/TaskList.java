@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class TaskList  {
     //ArrayList<task>taskArrayList=new ArrayList<>();
-    ArrayList<Task> taskArrayList;
+   ArrayList<Task> taskArrayList;
 
 
     // constructor called on initialization e.g. new TaskList();
@@ -101,7 +103,13 @@ public class TaskList  {
         return done;
     }
 
+    public void sortByProject(){
+        Collections.sort(this.getTaskArrayList());
+
+    }
+
 
 
 
 }
+

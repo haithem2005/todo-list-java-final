@@ -1,8 +1,10 @@
 
 import java.io.Serializable;
+import java.util.Collections;
 
 
-public class Task {
+public class Task implements Comparable<Task> {
+
 
     private String title;
     private String DueDate;
@@ -68,6 +70,16 @@ public class Task {
     public boolean equals(Task t){
         return t.title.equals(title);
     }
+
+
+
+
+     @Override
+     public int compareTo(Task o) {
+         return this.getProject().compareTo(o.getProject());
+     }
+
+
 
 
 }
