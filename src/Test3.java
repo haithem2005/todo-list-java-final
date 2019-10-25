@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Test3 {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in).useDelimiter("\n");
         Integer userInput;
         File file = new File("src/test2.txt");
         RWTasks rw = new RWTasks();
