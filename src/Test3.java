@@ -31,7 +31,9 @@ public class Test3 {
             switch (userInput) {
 
                 case 1:
-                    taskArrayList.sortByProject();
+                    /*taskArrayList.sortByProject();
+                    taskArrayList.print();*/
+                    taskArrayList.sortByDate();
                     taskArrayList.print();
                     break;
                 case 2:

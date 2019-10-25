@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TaskList  {
+public class TaskList {
     //ArrayList<task>taskArrayList=new ArrayList<>();
    ArrayList<Task> taskArrayList;
 
@@ -107,6 +107,12 @@ public class TaskList  {
         Collections.sort(this.getTaskArrayList());
 
     }
+    public void sortByDate(){
+        Collections.sort(this.getTaskArrayList(), Task.compareByDate );
+
+    }
+
+
 
 
 
