@@ -1,6 +1,7 @@
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.Comparator;
 
 
 public class Task implements Comparable<Task> {
@@ -74,12 +75,16 @@ public class Task implements Comparable<Task> {
 
 
 
-     @Override
+    @Override
      public int compareTo(Task o) {
          return this.getProject().compareTo(o.getProject());
      }
 
-
-
+    public static Comparator<Task> compareByDate = new Comparator<Task>() {
+        @Override
+        public int compare(Task o1, Task o2) {
+            return o1.getDueDate().compareTo(o2.getDueDate());
+        }
+    };
 
 }
